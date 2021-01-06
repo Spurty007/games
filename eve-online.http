@@ -1,0 +1,161 @@
+@hostname = esi.evetech.net
+@contentType = application/json
+@latest=https://{{hostname}}/latest
+@versions=https://{{hostname}}/versions/
+@auth= https://login.eveonline.com/v2/oauth/authorize
+
+@pullids={{latest}}/universe/ids/?datasource=tranquility&language=en-us
+
+### Scopes:
+
+# EVE SSO scope esi-alliances.read_contacts.v1
+@alliances.read_contacts=esi-alliances.read_contacts.v1
+# EVE SSO scope esi-assets.read_assets.v1
+@assets.read_assets=esi-assets.read_assets.v1
+# EVE SSO scope esi-assets.read_corporation_assets.v1
+@assets.read_corporation_assets=esi-assets.read_corporation_assets.v1
+# EVE SSO scope esi-bookmarks.read_character_bookmarks.v1
+@bookmarks.read_character_bookmarks=esi-bookmarks.read_character_bookmarks.v1
+# EVE SSO scope esi-bookmarks.read_corporation_bookmarks.v1
+@bookmarks.read_corporation_bookmarks=esi-bookmarks.read_corporation_bookmarks.v1
+# EVE SSO scope esi-calendar.read_calendar_events.v1
+@calendar.read_calendar_events=esi-calendar.read_calendar_events.v1
+# EVE SSO scope esi-calendar.respond_calendar_events.v1
+@calendar.respond_calendar_events=esi-calendar.respond_calendar_events.v1
+# EVE SSO scope esi-characters.read_agents_research.v1
+@characters.read_agents_research=esi-characters.read_agents_research.v1
+# EVE SSO scope esi-characters.read_blueprints.v1
+@characters.read_blueprints=esi-characters.read_blueprints.v1
+# EVE SSO scope esi-characters.read_contacts.v1
+@characters.read_contacts=esi-characters.read_contacts.v1
+# EVE SSO scope esi-characters.read_corporation_roles.v1
+@characters.read_corporation_roles=esi-characters.read_corporation_roles.v1
+# EVE SSO scope esi-characters.read_fatigue.v1
+@characters.read_fatigue=esi-characters.read_fatigue.v1
+# EVE SSO scope esi-characters.read_fw_stats.v1
+@characters.read_fw_stats=esi-characters.read_fw_stats.v1
+# EVE SSO scope esi-characters.read_loyalty.v1
+@characters.read_loyalty=esi-characters.read_loyalty.v1
+# EVE SSO scope esi-characters.read_medals.v1
+@characters.read_medals=esi-characters.read_medals.v1
+# EVE SSO scope esi-characters.read_notifications.v1
+@characters.read_notifications=esi-characters.read_notifications.v1
+# EVE SSO scope esi-characters.read_opportunities.v1
+@characters.read_opportunities=esi-characters.read_opportunities.v1
+# EVE SSO scope esi-characters.read_standings.v1
+@characters.read_standings=esi-characters.read_standings.v1
+# EVE SSO scope esi-characters.read_titles.v1
+@characters.read_titles=esi-characters.read_titles.v1
+# EVE SSO scope esi-characters.write_contacts.v1
+@characters.write_contacts=esi-characters.write_contacts.v1
+# EVE SSO scope esi-clones.read_clones.v1
+@clones.read_clones=esi-clones.read_clones.v1
+# EVE SSO scope esi-clones.read_implants.v1
+@clones.read_implants=esi-clones.read_implants.v1
+# EVE SSO scope esi-contracts.read_character_contracts.v1
+@contracts.read_character_contracts=esi-contracts.read_character_contracts.v1
+# EVE SSO scope esi-contracts.read_corporation_contracts.v1
+@contracts.read_corporation_contracts=esi-contracts.read_corporation_contracts.v1
+# EVE SSO scope esi-corporations.read_blueprints.v1
+@corporations.read_blueprints=esi-corporations.read_blueprints.v1
+# EVE SSO scope esi-corporations.read_contacts.v1
+@corporations.read_contacts=esi-corporations.read_contacts.v1
+# EVE SSO scope esi-corporations.read_container_logs.v1
+@corporations.read_container_logs=esi-corporations.read_container_logs.v1
+# EVE SSO scope esi-corporations.read_corporation_membership.v1
+@corporations.read_corporation_membership=esi-corporations.read_corporation_membership.v1
+# EVE SSO scope esi-corporations.read_divisions.v1
+@corporations.read_divisions=esi-corporations.read_divisions.v1
+# EVE SSO scope esi-corporations.read_facilities.v1
+@corporations.read_facilities=esi-corporations.read_facilities.v1
+# EVE SSO scope esi-corporations.read_fw_stats.v1
+@corporations.read_fw_stats=esi-corporations.read_fw_stats.v1
+# EVE SSO scope esi-corporations.read_medals.v1
+@corporations.read_medals=esi-corporations.read_medals.v1
+# EVE SSO scope esi-corporations.read_standings.v1
+@corporations.read_standings=esi-corporations.read_standings.v1
+# EVE SSO scope esi-corporations.read_starbases.v1
+@corporations.read_starbases=esi-corporations.read_starbases.v1
+# EVE SSO scope esi-corporations.read_structures.v1
+@corporations.read_structures=esi-corporations.read_structures.v1
+# EVE SSO scope esi-corporations.read_titles.v1
+@corporations.read_titles=esi-corporations.read_titles.v1
+# EVE SSO scope esi-corporations.track_members.v1
+@corporations.track_members=esi-corporations.track_members.v1
+# EVE SSO scope esi-fittings.read_fittings.v1
+@fittings.read_fittings=esi-fittings.read_fittings.v1
+# EVE SSO scope esi-fittings.write_fittings.v1
+@fittings.write_fittings=esi-fittings.write_fittings.v1
+# EVE SSO scope esi-fleets.read_fleet.v1
+@fleets.read_fleet=esi-fleets.read_fleet.v1
+# EVE SSO scope esi-fleets.write_fleet.v1
+@fleets.write_fleet=esi-fleets.write_fleet.v1
+# EVE SSO scope esi-industry.read_character_jobs.v1
+@industry.read_character_jobs=esi-industry.read_character_jobs.v1
+# EVE SSO scope esi-industry.read_character_mining.v1
+@industry.read_character_mining=esi-industry.read_character_mining.v1
+# EVE SSO scope esi-industry.read_corporation_jobs.v1
+@industry.read_corporation_jobs=esi-industry.read_corporation_jobs.v1
+# EVE SSO scope esi-industry.read_corporation_mining.v1
+@industry.read_corporation_mining=esi-industry.read_corporation_mining.v1
+# EVE SSO scope esi-killmails.read_corporation_killmails.v1
+@killmails.read_corporation_killmails=esi-killmails.read_corporation_killmails.v1
+# EVE SSO scope esi-killmails.read_killmails.v1
+@killmails.read_killmails=esi-killmails.read_killmails.v1
+# EVE SSO scope esi-location.read_location.v1
+@location.read_location=esi-location.read_location.v1
+# EVE SSO scope esi-location.read_online.v1
+@location.read_online=esi-location.read_online.v1
+# EVE SSO scope esi-location.read_ship_type.v1
+@location.read_ship_type=esi-location.read_ship_type.v1
+# EVE SSO scope esi-mail.organize_mail.v1
+@mail.organize_mail=esi-mail.organize_mail.v1
+# EVE SSO scope esi-mail.read_mail.v1
+@mail.read_mail=esi-mail.read_mail.v1
+# EVE SSO scope esi-mail.send_mail.v1
+@mail.send_mail=esi-mail.send_mail.v1
+# EVE SSO scope esi-markets.read_character_orders.v1
+@markets.read_character_orders=esi-markets.read_character_orders.v1
+# EVE SSO scope esi-markets.read_corporation_orders.v1
+@markets.read_corporation_orders=esi-markets.read_corporation_orders.v1
+# EVE SSO scope esi-markets.structure_markets.v1
+@markets.structure_markets=esi-markets.structure_markets.v1
+# EVE SSO scope esi-planets.manage_planets.v1
+@planets.manage_planets=esi-planets.manage_planets.v1
+# EVE SSO scope esi-planets.read_customs_offices.v1
+@planets.read_customs_offices=esi-planets.read_customs_offices.v1
+# EVE SSO scope esi-search.search_structures.v1
+@search.search_structures=esi-search.search_structures.v1
+# EVE SSO scope esi-skills.read_skillqueue.v1
+@skills.read_skillqueue=esi-skills.read_skillqueue.v1
+# EVE SSO scope esi-skills.read_skills.v1
+@skills.read_skills=esi-skills.read_skills.v1
+# EVE SSO scope esi-ui.open_window.v1
+@ui.open_window=esi-ui.open_window.v1
+# EVE SSO scope esi-ui.write_waypoint.v1
+@ui.write_waypoint=esi-ui.write_waypoint.v1
+# EVE SSO scope esi-universe.read_structures.v1
+@universe.read_structures=esi-universe.read_structures.v1
+# EVE SSO scope esi-wallet.read_character_wallet.v1
+@wallet.read_character_wallet=esi-wallet.read_character_wallet.v1
+# EVE SSO scope esi-wallet.read_corporation_wallets.v1
+@wallet.read_corporation_wallets=esi-wallet.read_corporation_wallets.v1
+### Test we can reach an endpoint - get players online info
+
+GET {{latest}}/status/?datasource=tranquility
+content-type: {{contentType}}
+
+### Find latest version
+
+GET {{versions}} 
+content-type: {{contentType}}
+
+### Get the ID of the character
+POST {{pullids}}
+content-type: {{contentType}}
+
+[
+    "Commander Spurty",
+    "Alcoholocaust.",
+    "TEST Alliance Please Ignore"
+]
